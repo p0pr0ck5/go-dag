@@ -1,4 +1,4 @@
-module github.com/p0pr0ck5/dag
+module github.com/p0pr0ck5/go-dag
 
 go 1.24.6
 

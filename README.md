@@ -7,7 +7,7 @@ A tiny, generic Directed Acyclic Graph (DAG) library for Go. It provides cycle-s
 ## Install
 
 ```bash
-go get github.com/p0pr0ck5/dag@latest
+go get github.com/p0pr0ck5/go-dag@latest
 ```
 
 ## Quick Start
@@ -18,7 +18,7 @@ package main
 import (
     "fmt"
 
-    "github.com/p0pr0ck5/dag"
+    "github.com/p0pr0ck5/go-dag"
 )
 
 func main() {
