@@ -1,5 +1,7 @@
 # DAG
 
+[![CI](https://github.com/p0pr0ck5/go-dag/actions/workflows/ci.yml/badge.svg)](https://github.com/p0pr0ck5/go-dag/actions/workflows/ci.yml)
+
 A tiny, generic Directed Acyclic Graph (DAG) library for Go. It provides cycle-safe edge creation, deterministic traversal, and handy helpers like topological sort, roots/leaves, ancestors/descendants, shortest paths, and DOT output for visualization.
 
 ## Install
