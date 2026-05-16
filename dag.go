@@ -1,6 +1,9 @@
 package dag
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // ErrCycleDetected is returned when an operation would create a cycle in the DAG.
 var ErrCycleDetected = fmt.Errorf("adding this edge would create a cycle")
@@ -309,15 +312,16 @@ func (d *DAG[T]) Leaves() []*Node[T] {
 
 // Visualize generates a DOT format representation of the DAG for visualization.
 func (d *DAG[T]) Visualize() string {
-	result := "digraph G {\n"
+	var result strings.Builder
+	result.WriteString("digraph G {\n")
 	for _, node := range d.nodes {
 		// Use deterministic iteration order
 		for _, child := range node.Children() {
-			result += fmt.Sprintf("    \"%v\" -> \"%v\";\n", node.Data(), child.Data())
+			fmt.Fprintf(&result, "    \"%v\" -> \"%v\";\n", node.Data(), child.Data())
 		}
 	}
-	result += "}\n"
-	return result
+	result.WriteString("}\n")
+	return result.String()
 }
 
 // HasEdge checks if there is a directed edge from the node with data 'from'
